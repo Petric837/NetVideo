@@ -5,7 +5,7 @@
 */
 
 #include "Customer.hpp"
-#include "Video.hpp"
+#include "Movie.hpp"
 
 #include <iostream>
 #include <sstream>
@@ -46,29 +46,29 @@ std::string Customer::statement() const {
         ++frequentRenterPoints;
 
         // new releases rented for more then one day gives a bonus rental point
-        if (it->getVideo().getCode() == Video::NEW_RELEASE &&
+        if (it->getMovie().getCode() == Movie::NEW_RELEASE &&
             it->getDaysRented() > 1 )
             ++frequentRenterPoints;
 
         // title of rental
         result += "\t";
-        result += it->getVideo().getTitle();
+        result += it->getMovie().getTitle();
         result += "\t";
 
         double thisAmount = 0;
-        switch(it->getVideo().getCode()) {
+        switch(it->getMovie().getCode()) {
 
-            case Video::REGULAR:
+            case Movie::REGULAR:
             thisAmount += 2;
             if (it->getDaysRented() > 2)
                 thisAmount += (it->getDaysRented() - 2) * 1.5;
             break;
 
-            case Video::NEW_RELEASE:
+            case Movie::NEW_RELEASE:
             thisAmount += it->getDaysRented() * 3;
             break;
 
-            case Video::CHILDRENS:
+            case Movie::CHILDRENS:
             thisAmount += 1.5;
             if (it->getDaysRented() > 3)
                 thisAmount += (it->getDaysRented() - 3) * 1.5;

@@ -7,22 +7,22 @@
 #ifndef RENTAL_H
 #define RENTAL_H
 
-#include "Video.hpp"
+#include "Movie.hpp"
 
 class Rental {
 public:
 
     // constructor
-    Rental(const Video& movie, int days_rented);
+    Rental(const Movie& movie, int days_rented);
 
     // days rented
     int getDaysRented() const;
 
     // movie rented
-    const Video& getVideo() const;
+    const Movie& getMovie() const;
 
 private:
-    Video movie;
+    Movie movie;
     int days;
 };
 
