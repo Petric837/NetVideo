@@ -15,6 +15,7 @@ public:
     static const int REGULAR      = 0;
     static const int NEW_RELEASE  = 1;
     static const int CHILDRENS    = 2;
+    static const int TOP_SELLER   = 3;
 
     // constructor
     Movie(const std::string& title, int price_code);

@@ -34,6 +34,14 @@ int main() {
     assert(movie.getCode() == Movie::CHILDRENS);
   }
 
+  // top seller
+  {
+    Movie movie("A", Movie::TOP_SELLER);
+
+    assert(movie.getTitle() == "A");
+    assert(movie.getCode() == Movie::TOP_SELLER);
+  }
+
   // longer title
   {
     Movie movie("A B", Movie::REGULAR);
